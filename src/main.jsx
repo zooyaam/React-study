@@ -1,25 +1,16 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-
-// React.Component Type 1 :: class syntax
-class App {
-  constructor() {}
-
-  render() {}
-}
-
-// React.Component Type 2 :: function syntax
-function createApp() {
-  return (
-    <div id="app" lang="en">
-      <h1>React Application</h1>
-    </div>
-  );
-}
+import App from "./components/App.class";
 
 const domElement = document.getElementById("root");
 
 if (domElement) {
   const reactDomRoot = createRoot(domElement);
-  reactDomRoot.render();
+  // 컴포넌트(component, class) = 생성 => 인스턴스(instance, element, object)
+  // 클래스 구문
+  // const app = new App().render(); // app ????
+  const app = React.createElement(App /* 컴포넌트 타입 */);
+  // 함수 구문
+  // const app = createApp();
+  reactDomRoot.render(app);
 }
