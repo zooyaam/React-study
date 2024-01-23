@@ -6,12 +6,12 @@ function App() {
       <Widget
         temperature={-0.9}
         summary="어제보다 1.3° 낮아요"
-        location="Seoul"
+        location="서울"
       />
       <Widget
-        temperature={1.2}
-        summary="어제보다 0.2° 낮아요"
-        location="Busan"
+        temperature={-0.7}
+        summary="어제보다 0.1° 높아요"
+        location="도쿄"
       />
     </div>
   );
