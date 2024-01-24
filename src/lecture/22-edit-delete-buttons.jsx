@@ -40,63 +40,62 @@ const IconTrash = ({ size = 16, stroke = 1.5, yPosition = -2 }) => (
   </svg>
 );
 
-const EditButton = ({ children }) => {
+const Button = ({ color, backgroundColor, children }) => (
+  <button
+    type="button"
+    style={{
+      cursor: 'pointer',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 4,
+      border: '1px solid',
+      borderColor: color,
+      borderRadius: 4,
+      padding: 8,
+      color,
+      backgroundColor,
+    }}
+  >
+    {children}
+  </button>
+);
+
+const EditButton = ({
+  color = '#2b2828',
+  backgroundColor = '#fff',
+  icon = null,
+  // <slot></slot>
+  children,
+}) => {
   return (
-    <button
-      type="button"
-      style={{
-        cursor: 'pointer',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        gap: 4,
-        border: '1px solid',
-        borderColor: '#7f7f7f',
-        borderRadius: 4,
-        padding: 8,
-        color: '#7f7f7f',
-        backgroundColor: '#fff',
-      }}
-    >
+    <Button color={color} backgroundColor={backgroundColor}>
       {children}
-    </button>
+      {/* <slot name="icon"></slot> */}
+      {icon}
+    </Button>
   );
 };
 
-const DeleteButton = ({ children }) => {
+const DeleteButton = ({
+  color = '#f53535',
+  backgroundColor = '#fff',
+  icon = null,
+  children,
+}) => {
   return (
-    <button
-      type="button"
-      style={{
-        cursor: 'pointer',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        gap: 4,
-        border: '1px solid',
-        borderColor: '#f53535',
-        borderRadius: 4,
-        padding: 8,
-        color: '#f53535',
-        backgroundColor: '#fff',
-      }}
-    >
+    <Button color={color} backgroundColor={backgroundColor}>
       {children}
-    </button>
+      {icon}
+    </Button>
   );
 };
 
 export default function Exercise() {
   return (
     <div role="group" className="exercise">
-      <EditButton>
-        수정하기
-        <IconEdit />
-      </EditButton>
-      <DeleteButton>
-        삭제하기
-        <IconTrash />
-      </DeleteButton>
+      <EditButton icon={<IconEdit />}>수정하기</EditButton>
+      <DeleteButton icon={<IconTrash />}>삭제하기</DeleteButton>
     </div>
   );
 }
