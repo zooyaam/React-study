@@ -10,11 +10,16 @@
 
 #root {
   padding: 80px 20px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a2c86839289e60a35eab3d06da5e366db6bed848
 }
 
 .exercises__navigation {
   overflow: hidden;
   position: fixed;
+  z-index: 1000;
   left: 0;
   right: 0;
   top: 0;
@@ -28,7 +33,11 @@
     flex-flow: nowrap;
     padding: 12px;
 
+<<<<<<< HEAD
     & a {
+=======
+    a {
+>>>>>>> a2c86839289e60a35eab3d06da5e366db6bed848
       min-inline-size: 12ch;
       padding: 8px;
       text-decoration: none;
