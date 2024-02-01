@@ -29,11 +29,7 @@
     flex-flow: nowrap;
     padding: 12px;
 
-<<<<<<< HEAD
     & a {
-=======
-    a {
->>>>>>> a2c86839289e60a35eab3d06da5e366db6bed848
       min-inline-size: 12ch;
       padding: 8px;
       text-decoration: none;
